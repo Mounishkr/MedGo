@@ -1,89 +1,191 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<!doctype html>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.13.2/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.13.2/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.13.2/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedGo</title>
+  <link href='style.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <div class="symbol">
+            <img src="logoim.png" alt="Logo" class="logo-image">
+          <div class="heading">
+            <h2><span class="med1">Med</span><span class="go1">Go</span></h2>
+          </div>
+          <p class="about1">
+            The best supply chain consultant
+          </p>
+        </div>
+        <div class="navitems">
+          <li class="nav-item">
+            <a class="nav-link"  aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </div>
+        </ul>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </nav>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <!-- Hero Section -->
+  <section id="hero" class="min-vh-100 d-flex align-items-center">
+    <div class="container text-center">
+      <div class="img-container">
+        <img src="best.png" alt="Best" class="best">
+        <img src="medgo.png" alt="MedGo" class="medgo">
+        <img src="supply.png" alt="Supply" class="supply">
+        <img src="doct.png" alt="Doctor" class="doct">
+        <img src="subhead.png" alt="Subhead" class="subhead">
+      </div>
+      <a href="#website"><button class="btn"><b>Get Started</b></button></a>
+    </div>
+  </section>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+  <!-- Content Section -->
+  <div id="website">
+
+    <section class="card1">
+      <div class="section_1">
+        <div class="content_1">
+          <h3 class="head">OPTIMIZE COST</h3>
+          <p class="para">We help clients save costs in procurement, enabling them to focus on top-quality healthcare services.</p>
+        </div>
+        <div class="divider1">
+          <div class="line"></div>
+          <div class="dot_1"></div>
+          <div class="line2"></div>
+        </div>
+        <div class="pic_1">
+          <img src="opti.png" class="image" alt="Optimize Cost">
+        </div>
+      </div>
+    </section>
+
+    <section class="card1">
+      <div class="section_2">
+        <div class="pic_2">
+          <img src="boost.png" class="image" alt="Boost Revenue">
+        </div>
+        <div class="divider">
+          <div class="line1"></div>
+          <div class="dot"></div>
+          <div class="line2"></div>
+        </div>
+        <div class="content_2">
+          <h3 class="head">BOOST REVENUE</h3>
+          <p class="para">We streamline procurement to boost clients' profits while ensuring quality and maintaining patient care standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card1">
+      <div class="section_1">
+        <div class="content_1">
+          <h3 class="head">ENHANCE MEDICAL SERVICES</h3>
+          <p class="para">We use cutting-edge tools to enhance medical services.</p>
+        </div>
+        <div class="divider">
+          <div class="line1"></div>
+          <div class="dot"></div>
+          <div class="line2"></div>
+        </div>
+        <div class="pic_1">
+          <img src="enhance.png" class="image" alt="Enhance Medical Services">
+        </div>
+      </div>
+    </section>
+
+    <section class="card1">
+      <div class="section_2">
+        <div class="pic_2">
+          <img src="streamline.png" class="image2" alt="Streamline Inventory">
+        </div>
+        <div class="divider">
+          <div class="line1"></div>
+          <div class="dot"></div>
+          <div class="line2"></div>
+        </div>
+        <div class="content_2">
+          <h3 class="head">STREAMLINE INVENTORY</h3>
+          <p class="para">We streamline fragmented healthcare procurement, ensuring efficient purchasing and reduced administrative burden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card1">
+      <div class="section_1">
+        <div class="content_1">
+          <h3 class="head">PRODUCT STANDARDIZATION</h3>
+          <p class="para">We standardize product masters, ensuring consistent product catalogs for accurate supply management in healthcare.</p>
+        </div>
+        <div class="divider">
+          <div class="line1"></div>
+          <div class="dot"></div>
+          <div class="line2"></div>
+        </div>
+        <div class="pic_1">
+          <img src="prod.png" class="image" alt="Product Standardization">
+        </div>
+      </div>
+    </section>
+  </div>
+  <!--footer-->
+  <div class="footer" id="contact">
+    <div class="footer-content">
+     <div class="footer-about">
+      <h2 class= "logo"><span class="med">Med</span><span class="go">Go</span></h2>
+      <p class="about">
+        The best supply chain consultant
+      </p>
+       <div class="contact">
+        <span><i class="fa-solid fa-phone"></i>&nbsp; 123-456-7890</span>
+        <span> <i class="fa-solid fa-envelope"></i>&nbsp; medgosupply@gmail.com</span>
+       </div>
+       <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+       </div>
+     </div>
+     <div class="footer-message">
+       <h2>Contact Us</h2>
+       <br>
+       <form action="index.html" method="post">
+        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+        <textarea name="message" placeholder="Your message..." class="text-input contact-input"></textarea>
+        <div class="button">
+       <button class="submit"> <i class="fa-solid fa-envelope"></i>Send</button></div>
+      </form>
+     </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy MedGo.com | Designed by Medgo team
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script defer type="text/javascript" src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+</body>
+
 </html>
